@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->timestamp('created_at');
+            $table->timestamps();
 
             $table->foreign('role_id') -> references('role_id')->on('m_roles');
         });
