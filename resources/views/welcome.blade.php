@@ -47,6 +47,10 @@
                         class="px-4 py-1.5 rounded-sm text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC] hover:underline transition-all">
                         Blog
                     </a>
+                    <a href="{{ url('/login') }}"
+                        class="px-4 py-1.5 rounded-sm text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC] hover:underline transition-all">
+                        Login
+                    </a>
                 </nav>
             </div>
             <div class="w-full lg:w-auto flex justify-center lg:justify-end">
