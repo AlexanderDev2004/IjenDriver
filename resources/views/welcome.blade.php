@@ -52,8 +52,8 @@
             <div class="w-full lg:w-auto flex justify-center lg:justify-end">
                 <select
                     class="border border-[#19140035] dark:border-[#3E3E3A] rounded-sm px-3 py-1 text-sm dark:bg-[#161615] dark:text-[#EDEDEC] w-full max-w-xs lg:max-w-none">
-                    <option value="id">Bahasa Indonesia</option>
                     <option value="en">English</option>
+                    <option value="id">Bahasa Indonesia</option>
                 </select>
             </div>
         </div>
