@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('m_roles', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id('role_id');
-            $table->string('level_kode', 10)->unique();
-            $table->string('level_nama', 100);
+            $table->string('role_kode', 10)->unique();
+            $table->string('role_nama', 100);
             $table->timestamps();
         });
     }

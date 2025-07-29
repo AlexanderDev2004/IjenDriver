@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('m_user', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id('user_id');
             $table->unsignedBigInteger('role_id')->index();
             $table->string('name');
@@ -20,7 +21,10 @@ return new class extends Migration
             $table->string('password');
             $table->timestamps();
 
-            $table->foreign('role_id') -> references('role_id')->on('m_roles');
+            $table->foreign('role_id')
+                ->references('role_id')
+                ->on('m_roles')
+                ->onDelete('cascade');
         });
     }
 
