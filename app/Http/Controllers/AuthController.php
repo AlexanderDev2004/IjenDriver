@@ -8,32 +8,35 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     public function login() {
-        if(Auth::check()){ // jika sudah login, maka redirect ke halaman home
-            return redirect('/');
+        if (Auth::check()) {
+            return redirect()->route('dashboard'); 
         }
         return view('auth.login');
     }
 
     public function postlogin(Request $request) {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/');
+            return redirect()->intended('dashboard');
         }
 
         return redirect()->back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Email atau password salah.',
         ]);
-
-        return redirect('login');
     }
 
     public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect('login');
     }
 }

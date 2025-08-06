@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $data = [
-            ['user_id' => 1, 'role_id' => 1, 'name' => 'Alexander', 'username' => 'alexander', 'email' => 'alexgaming2120@gmail.com', 'password' => Hash::make('Alexander123')],
+            ['user_id' => 1, 'role_id' => 1, 'name' => 'Alexander', 'username' => 'alexander', 'email' => 'alexgaming2120@gmail.com', 'password' => Hash::make('Alex123')],
         ];
         DB::table('m_user')->insert($data);
     }
