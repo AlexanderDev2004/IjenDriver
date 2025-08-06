@@ -17,13 +17,13 @@ class AuthController extends Controller
     public function postlogin(Request $request) {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required|min:6',
+            'password' => 'required|min:8',
         ]);
 
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+            return redirect()->intended('admin.dashboard');
         }
 
         return redirect()->back()->withErrors([
