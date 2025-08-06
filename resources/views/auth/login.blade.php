@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Login Admin</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f4; }
+        body { font-family: Arial, sans-serif; background: #232222; }
         .login-container {
             width: 350px;
             margin: 80px auto;
@@ -27,6 +27,9 @@
     </style>
 </head>
 <body>
+    <a href="{{ url('/') }}">
+        <img src="{{ asset('IjenDriver.png') }}" alt="Logo" style="display: block; margin: 0 auto; width: 100px;">
+    </a>
     <div class="login-container">
         <h2>Login Admin</h2>
         @if ($errors->has('login_error'))
